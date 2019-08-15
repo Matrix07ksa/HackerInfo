@@ -5,7 +5,7 @@ pip3 install hackinfo
 ```
 
 
-```bash
+```python
 
 from hackinfo import hackinfo 
 hackinfo.nmap("www.google.com")
