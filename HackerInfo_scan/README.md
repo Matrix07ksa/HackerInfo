@@ -29,7 +29,7 @@ PORT     STATE    SERVICE
 
 Nmap done: 1 IP address (1 host up) scanned in 1.25 seconds
 ```
-```bash
+```python
 
 hackinfo.reverseiplookup("www.facebook.com")
 [+] <-- Running Reverseiplookup ....[www.facebook.com] -->
