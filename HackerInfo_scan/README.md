@@ -29,5 +29,18 @@ PORT     STATE    SERVICE
 
 Nmap done: 1 IP address (1 host up) scanned in 1.25 seconds
 ```
+```bash
+
+hackinfo.reverseiplookup("www.facebook.com")
+[+] <-- Running Reverseiplookup ....[www.facebook.com] -->
+edge-star-mini-shv-01-sjc3.facebook.com
+facebook.com
+fbdogfoodbeta.com
+mobileironbackup.com
+purpletiesupport.com
+star-mini.c10r.facebook.com
+```
+
+
 ![Library_install_hackinfo](https://www.upload.ee/image/10356700/hejab_Library_install_hackinfo.png)
 
