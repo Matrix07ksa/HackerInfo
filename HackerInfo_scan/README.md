@@ -1,2 +1,6 @@
 # Library install hackinfo:
-![hackinfo_Library](https://im4.ezgif.com/tmp/ezgif-4-950ec0ae0729.mp4)
+```bash
+sudo python setup.py install
+```
+![Library_install_hackinfo](https://www.upload.ee/image/10356700/hejab_Library_install_hackinfo.png)
+
