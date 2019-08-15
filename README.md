@@ -25,4 +25,8 @@ pip3 install optioncomplete
 ![alt text](https://raw.githubusercontent.com/Matrix07ksa/HackerInfo/master/Screenshot/hejab_HackInfo.gif)
 
 # Library install hackinfo:
-![hackinfo_Library](http://www.gulf-up.com:182/d/oedak6glmdah2wlzy5jh4rmpcmvjsxn2gvdmkyvaiae7qiwdgiacjko3ehowoncfpqu5jlh7/hejab_Library_install_hackinfo.gif)
+```bash
+sudo python setup.py install
+```
+![Library_install_hackinfo](https://www.upload.ee/image/10356700/hejab_Library_install_hackinfo.png)
+
