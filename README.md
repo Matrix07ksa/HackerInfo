@@ -32,4 +32,3 @@ pip3 install hackinfo
 ```
 ![Library_install_hackinfo](https://www.upload.ee/image/10356700/hejab_Library_install_hackinfo.png)
 ![Library_install_hackinfo_2](https://www.upload.ee/download/10360417/2c41cf6702b615dc8538/IMG_-46qhuw.jpg)
-
