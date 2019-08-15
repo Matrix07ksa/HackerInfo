@@ -1,6 +1,6 @@
 # Library install hackinfo:
 ```bash
-
+sudo python3 setup.py install 
 pip3 install hackinfo
 ```
 
