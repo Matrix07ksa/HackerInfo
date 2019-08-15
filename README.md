@@ -18,6 +18,8 @@ pip3 install google
 
 pip3 install optioncomplete
 
+pip3 install bs4
+
 
 ```
 
