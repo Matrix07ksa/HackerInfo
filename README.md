@@ -3,6 +3,7 @@
 [![GPL](https://img.shields.io/badge/GPL-V3.0-red.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 [![pypi](https://img.shields.io/badge/Pypi-v1.0.0-blue)](https://pypi.org/project/hackinfo/)
 [![Termux](https://img.shields.io/badge/Termux-Android-brightgreen.svg)](https://termux.com/)
+![Twitter](https://img.shields.io/twitter/follow/Matrix0700.svg?style=social&label=Follow)
 ![platform](https://img.shields.io/badge/Platform-Linux%7CMacOS%7CWindows-brightgreen.svg)
 ![alt text](https://www.upload.ee/image/10356677/hejab_logo.png)
 ![alt text](https://raw.githubusercontent.com/Matrix07ksa/HackerInfo/master/Screenshot/hejab_hackInfo.png)
