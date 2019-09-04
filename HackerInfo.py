@@ -50,6 +50,9 @@ use.add_option("--dnslookup",dest="dnslookup")
 advanced = OptionGroup(use,"Advanced Options")
 advanced.add_option("--dork_scan-sql",dest="sql_scan",help=colored("<Your Dork> Search Google","red"))
 advanced.add_option('-c',"--cout",dest="cout_scan",help=colored("<Your cout> Search Google","red"),default=99999)
+advanced.add_option('-d',"--domain",dest="domain",help=colored("<Your Doamin>","red"))
+advanced.add_option('-f',"--file",dest="file_filter",help=colored("<Your Filter File>","red"),default="None")
+
 
 use.add_option_group(advanced)
 (options,args) = use.parse_args()
@@ -70,6 +73,8 @@ pagelinks = options.pagelinks
 httpheaders = options.httpheaders
 subnetcalc = options.subnetcalc
 dnslookup = options.dnslookup
+filter_file = options.file_filter
+Domain = options.domain
 if nmap == None:
      if ping == None:
           if trcrouter == None:
@@ -85,7 +90,9 @@ if nmap == None:
                                                             if subnetcalc == None :
                                                                  if dnslookup == None :
                                                                       if sql_scan == None:
-                                                                           print(use.usage)
+                                                                           if Domain == None:
+                                                                                
+                                                                                print(use.usage)
                                                                       
 if nmap != None:
      hackinfo.nmap(str(nmap))
@@ -138,7 +145,8 @@ if dnslookup != None:
      
 if sql_scan != None:
      hackinfo.Dork_scan_sql(sql_scan,options.cout_scan)
-     
+if Domain != None:
+     hackinfo.domain_filter(str(Domain),str(filter_file))
      
 else :
      exit()
