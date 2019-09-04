@@ -23,8 +23,39 @@ pip3 install bs4
 
 
 ```
+```bash
 
+python3 HackerInfo.py -d www.facebook.com -f pdf 
+[+] <-- Running Domain_filter_File ....-->
+[+] <-- Searching  [www.facebook.com] Files [pdf] ....-->
+https://www.facebook.com/gms_hub/share/dcvsda_wf.pdf
+https://www.facebook.com/gms_hub/share/facebook_groups_for_pages.pdf
+https://www.facebook.com/gms_hub/share/videorequirementschart.pdf
+https://www.facebook.com/gms_hub/share/fundraise-on-facebook_hi_in.pdf
+https://www.facebook.com/gms_hub/share/bidding-strategy_decision-tree_en_us.pdf
+https://www.facebook.com/gms_hub/share/fundraise-on-facebook_es_la.pdf
+https://www.facebook.com/gms_hub/share/fundraise-on-facebook_ar.pdf
+https://www.facebook.com/gms_hub/share/fundraise-on-facebook_ur_pk.pdf
+https://www.facebook.com/gms_hub/share/fundraise-on-facebook_cs_cz.pdf
+https://www.facebook.com/gms_hub/share/fundraise-on-facebook_it_it.pdf
+https://www.facebook.com/gms_hub/share/fundraise-on-facebook_pl_pl.pdf
+https://www.facebook.com/gms_hub/share/fundraise-on-facebook_nl.pdf
+https://www.facebook.com/gms_hub/share/fundraise-on-facebook_pt_br.pdf
+https://www.facebook.com/gms_hub/share/creative-best-practices_id_id.pdf
+https://www.facebook.com/gms_hub/share/creative-best-practices_fr_fr.pdf
+https://www.facebook.com/gms_hub/share/fundraise-on-facebook_tr_tr.pdf
+https://www.facebook.com/gms_hub/share/creative-best-practices_hi_in.pdf
+https://www.facebook.com/rsrc.php/yA/r/AVye1Rrg376.pdf
+https://www.facebook.com/gms_hub/share/creative-best-practices_ur_pk.pdf
+https://www.facebook.com/gms_hub/share/creative-best-practices_nl_nl.pdf
+https://www.facebook.com/gms_hub/share/creative-best-practices_de_de.pdf
+https://www.facebook.com/gms_hub/share/fundraise-on-facebook_de_de.pdf
+https://www.facebook.com/gms_hub/share/creative-best-practices_cs_cz.pdf
+https://www.facebook.com/gms_hub/share/fundraise-on-facebook_sk_sk.pdf
+https://www.facebook.com/gms_hub/share/creative-best-practices_japanese_jp.pdf
+#####################[Finshid]########################
 
+```
 # Usage:
 ![alt text](https://raw.githubusercontent.com/Matrix07ksa/HackerInfo/master/Screenshot/hejab_HackInfo.gif)
 
