@@ -8,6 +8,7 @@ import socket
 import time
 from bs4 import BeautifulSoup
 from googlesearch import search
+""" Hackinfo web application """
 def write(M):
         for c in M + '\n':
             sys.stdout.write(c)
@@ -76,7 +77,6 @@ class hackinfo():
                 for url in requests_url.text.split("\n"):
                         if re.findall("error check your api query",url):
                                 print(colored("[-] Error Chack ","red"))
-                                #re.match("\D+",Target).group().split(':')[1]
                         elif re.findall("error input is invalid",url):
                                 ip = socket.gethostbyname(Target)
                                 requests_url = Scan + ip
@@ -212,8 +212,24 @@ class hackinfo():
                 
                 
 
+        def domain_filter (domain,file):
+               write("[+] <-- Running Domain_filter_File ....-->")
+               write("[+] <-- Searching  [{}] Files [{}] ....-->".format(domain,file))
+               html = requests.get("https://www.google.com/search?num=500&q=site:"+domain+"+filetype:"+file)
+               if html.status_code == 200:
+                       data = re.sub('<b>', '', str(html.content))
+                       r = re.compile('[-_.a-zA-Z0-9.-_]*' + '\.' + file)  
+                       response = r.findall(data)
+                       for i in response :
+                               i.rstrip("\n")
+                               output = str(colored(i.replace("/url?q=",''),"green"))
+                               print(output) 
+                       print("#####################[Finshid]########################")
 
-
+               elif html.status_code == 302:
+                       print("Your Returned "+html.status_code+"Reason"+html.reason)
+               else:
+                       print("Your Returned "+html.status_code+"Reason"+html.reason)
 
 
 
