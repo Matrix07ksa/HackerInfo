@@ -6,7 +6,7 @@
 ![Twitter](https://img.shields.io/twitter/follow/Matrix0700.svg?style=social&label=Follow)
 ![platform](https://img.shields.io/badge/Platform-Linux%7CMacOS%7CWindows-brightgreen.svg)
 ![alt text](https://www.upload.ee/image/10356677/hejab_logo.png)
-![alt text](https://raw.githubusercontent.com/Matrix07ksa/HackerInfo/master/Screenshot/hejab_hackInfo.png)
+![alt text](https://raw.githubusercontent.com/Matrix07ksa/HackerInfo/master/Screenshot/Hackerinfo.jpg)
 ![alt text](https://raw.githubusercontent.com/Matrix07ksa/HackerInfo/master/Screenshot/hejab_SQL.png)
 
 ## install :
