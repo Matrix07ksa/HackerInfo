@@ -57,7 +57,7 @@ https://www.facebook.com/gms_hub/share/creative-best-practices_japanese_jp.pdf
 
 ```
 # Usage:
-![alt text](https://raw.githubusercontent.com/Matrix07ksa/HackerInfo/master/Screenshot/hejab_HackInfo.gif)
+![alt text](https://media.giphy.com/media/SX73GNeLiVLIF1AR6N/giphy.gif)
 
 # Library install hackinfo:
 ```bash
