@@ -33,6 +33,8 @@ use = OptionParser(colored("""             . . .
      `._###############_,'                 
         `--..#####..--'
 
+https://github.com/Matrix07ksa/
+     Hejap_Zaeri 515
 
 ""","green")+colored("-h, --help            show this help message and exit","red"))
 
