@@ -25,6 +25,17 @@ pip3 install optioncomplete
 pip3 install bs4
 
 
+pip3 install prettytable
+
+git clone https://github.com/Matrix07ksa/HackerInfo/
+
+cd HackerInfo
+
+chmod +x HackerInfo
+
+./HackerInfo -h
+
+
 ```
 ```bash
 
