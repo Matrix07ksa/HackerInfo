@@ -8,6 +8,9 @@
 ![alt text](https://www.upload.ee/image/10356677/hejab_logo.png)
 ![alt text](https://raw.githubusercontent.com/Matrix07ksa/HackerInfo/master/Screenshot/Hackerinfo.jpg)
 ![alt text](https://raw.githubusercontent.com/Matrix07ksa/HackerInfo/master/Screenshot/hejab_SQL.png)
+![alt text](https://raw.githubusercontent.com/Matrix07ksa/HackerInfo/master/Screenshot/help_tool.png)
+![alt text](https://raw.githubusercontent.com/Matrix07ksa/HackerInfo/master/Screenshot/SUID_exploit_command.png)
+![alt text](https://raw.githubusercontent.com/Matrix07ksa/HackerInfo/master/Screenshot/sql_scan.png)
 
 ## install :
 ```bash
