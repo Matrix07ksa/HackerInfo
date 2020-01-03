@@ -1,236 +1,192 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
-from termcolor import colored
-import requests
-import re 
+from HackerInfo_scan.hackinfo import hackinfo
+from  HackerInfo_scan.hackinfo import   colored
+try:
+     from optioncomplete import autocomplete
+except:
+     print("pip3 install optioncomplete")
+from optparse import *
 import sys
-import socket
-import time
-from bs4 import BeautifulSoup
-from googlesearch import search
-""" Hackinfo web application """
-def write(M):
-        for c in M + '\n':
-            sys.stdout.write(c)
-            sys.stdout.flush()
-            time.sleep(2. / 100)
 
-class hackinfo():
-        "web application Hejab Zaeri"
-        global HackerScan
-        HackerScan={
-        "ping":"https://api.hackertarget.com/nping/?q=",
-        "trcrouter":"https://api.hackertarget.com/mtr/?q=",
-        "reversedns":"https://api.hackertarget.com/reversedns/?q=",
-        "geoip":"https://api.hackertarget.com/geoip/?q=",
-        "reverseiplookup":"https://api.hackertarget.com/reverseiplookup/?q=",
-        "whois":"https://api.hackertarget.com/whois/?q=",
-        "zonetransfer":"https://api.hackertarget.com/zonetransfer/?q=",
-        "findshareddns":"https://api.hackertarget.com/findshareddns/?q=",
-        "hostsearch":"https://api.hackertarget.com/hostsearch/?q=",
-        "nmap":"https://api.hackertarget.com/nmap/?q=",
-        "pagelinks":"https://api.hackertarget.com/pagelinks/?q=",
-        "httpheaders":"https://api.hackertarget.com/httpheaders/?q=",
-        "subnetcalc":"https://api.hackertarget.com/subnetcalc/?q=",
-        "dnslookup":"https://api.hackertarget.com/dnslookup/?q="
-        }
-        def nmap (Target):
-                Scan = HackerScan['nmap']
-                write("[+] <-- Running Nmap....[{}] -->".format(Target))
-                sys.stdout.flush()
-                requests_url = Scan + Target
-                requests_url = requests.get(requests_url)
-                for url in requests_url.text.split("\n"):
-                        if re.findall("error check your api query",url):
-                                print(colored("[-] Error Chack ","red"))
-                        else:
-                                print(colored(url.strip(),"green"))
+use = OptionParser(colored("""             . . .                         
+              \|/                          
+            `--+--'                        
+              /|\                          
+             ' | '                         
+               |                           
+               |                           
+           ,--'#`--.                       
+           |#######|                       
+        _.-'#######`-._                    
+     ,-'###############`-.                 
+   ,'#####################`,               
+  /#########################\              
+ |###########################|             
+|#############################|            
+|#############################|            
+|#############################|            
+|#############################|            
+ |###########################|             
+  \#########################/              
+   `.#####################,'               
+     `._###############_,'                 
+        `--..#####..--'
 
-        def ping(Target):
-                Scan = HackerScan['ping']
-                write("[+] <-- Running Ping....[{}] -->".format(Target))
-                sys.stdout.flush()
-                requests_url = Scan + Target
-                requests_url = requests.get(requests_url)
-                for url in requests_url.text.split("\n"):
-                        if re.findall("error check your api query",url):
-                                print(colored("[-] Error Chack ","red"))
-                        else:
-                                print(colored(url.strip(),"green"))
-        def trcrouter(Target):
-                Scan = HackerScan['trcrouter']
-                write("[+] <-- Running Trcrouter ....[{}] -->".format(Target))
-                sys.stdout.flush()
-                requests_url = Scan + Target
-                requests_url = requests.get(requests_url)
-                for url in requests_url.text.split("\n"):
-                        if re.findall("error check your api query",url):
-                                print(colored("[-] Error Chack ","red"))
-                        else:
-                                print(colored(url.strip(),"green"))
-        def reversedns (Target):
-                Scan = HackerScan['reversedns']
-                write("[+] <-- Running Reversedns ....[{}] -->".format(Target))
-                sys.stdout.flush()
-                requests_url = Scan + Target
-                requests_url = requests.get(requests_url)
-                for url in requests_url.text.split("\n"):
-                        if re.findall("error check your api query",url):
-                                print(colored("[-] Error Chack ","red"))
-                        elif re.findall("error input is invalid",url):
-                                ip = socket.gethostbyname(Target)
-                                requests_url = Scan + ip
-                                for url_ip in requests.get(requests_url).text.split("\n"):
-                                        print(colored(url_ip,"green"))
-                        else:
-                                print(colored(url.strip(),"green"))
-        def geoip(Target):
-                Scan = HackerScan['geoip']
-                write("[+] <-- Running Geoip ....[{}] -->".format(Target))
-                sys.stdout.flush()
-                requests_url = Scan + Target
-                requests_url = requests.get(requests_url)
-                for url in requests_url.text.split("\n"):
-                        if re.findall("error check your api query",url):
-                                print(colored("[-] Error Chack ","red"))
-                        else:
-                                print(colored(url.strip(),"green"))
-        def reverseiplookup (Target):
-                Scan = HackerScan['reverseiplookup']
-                write("[+] <-- Running Reverseiplookup ....[{}] -->".format(Target))
-                sys.stdout.flush()
-                requests_url = Scan + Target
-                requests_url = requests.get(requests_url)
-                for url in requests_url.text.split("\n"):
-                        if re.findall("error check your api query",url):
-                                print(colored("[-] Error Chack ","red"))
-                        else:
-                                print(colored(url.strip(),"green"))
-        def whois (Target):
-                Scan = HackerScan['whois']
-                write("[+] <-- Running Whois ....[{}] -->".format(Target))
-                sys.stdout.flush()
-                requests_url = Scan + Target
-                requests_url = requests.get(requests_url)
-                for url in requests_url.text.split("\n"):
-                        if re.findall("error check your api query",url):
-                                print(colored("[-] Error Chack ","red"))
-                        else:
-                                print(colored(url.strip(),"green"))
-        def zonetransfer (Target):
-                Scan = HackerScan['zonetransfer']
-                write("[+] <-- Running Zonetransfer ....[{}] -->".format(Target))
-                sys.stdout.flush()
-                requests_url = Scan + Target
-                requests_url = requests.get(requests_url)
-                for url in requests_url.text.split("\n"):
-                        if re.findall("error check your api query",url):
-                                print(colored("[-] Error Chack ","red"))
-                        else:
-                                print(colored(url.strip(),"green"))
-        def findshareddns(Target):
-                Scan = HackerScan['findshareddns']
-                write("[+] <-- Running Findshareddns ....[{}] -->".format(Target))
-                sys.stdout.flush()
-                requests_url = Scan + Target
-                requests_url = requests.get(requests_url)
-                for url in requests_url.text.split("\n"):
-                        if re.findall("error check your api query",url):
-                                print(colored("[-] Error Chack ","red"))
-                        else:
-                                print(colored(url.strip(),"green"))
-        def hostsearch(Target):
-                Scan = HackerScan['hostsearch']
-                write("[+] <-- Running HostSearch ....[{}] -->".format(Target))
-                sys.stdout.flush()
-                requests_url = Scan + Target
-                requests_url = requests.get(requests_url)
-                for url in requests_url.text.split("\n"):
-                        if re.findall("error check your api query",url):
-                                print(colored("[-] Error Chack ","red"))
-                        else:
-                                print(colored(url.strip(),"green"))
-        def pagelinks(Target):
-                Scan = HackerScan['pagelinks']
-                write("[+] <-- Running Pagelinks ....[{}] -->".format(Target))
-                sys.stdout.flush()
-                requests_url = Scan + Target
-                requests_url = requests.get(requests_url)
-                for url in requests_url.text.split("\n"):
-                        if re.findall("error check your api query",url):
-                                print(colored("[-] Error Chack ","red"))
-                        else:
-                                print(colored(url.strip(),"green"))
-        def httpheaders(Target):
-                Scan = HackerScan['httpheaders']
-                write("[+] <-- Running HttpHeaders ....[{}] -->".format(Target))
-                sys.stdout.flush()
-                requests_url = Scan + Target
-                requests_url = requests.get(requests_url)
-                for url in requests_url.text.split("\n"):
-                        if re.findall("error check your api query",url):
-                                print(colored("[-] Error Chack ","red"))
-                        else:
-                                print(colored(url.strip(),"green"))
-        def subnetcalc(Target):
-                Scan = HackerScan['subnetcalc']
-                write("[+] <-- Running Subnetcalc ....[{}] -->".format(Target))
-                sys.stdout.flush()
-                requests_url = Scan + Target
-                requests_url = requests.get(requests_url)
-                for url in requests_url.text.split("\n"):
-                        if re.findall("error check your api query",url):
-                                print(colored("[-] Error Chack ","red"))
-                        else:
-                                print(colored(url.strip(),"green"))
-        def dnslookup(Target):
-                Scan = HackerScan['dnslookup']
-                write("[+] <-- Running Dnslookup ....[{}] -->".format(Target))
-                sys.stdout.flush()
-                requests_url = Scan + Target
-                requests_url = requests.get(requests_url)
-                for url in requests_url.text.split("\n"):
-                        if re.findall("error check your api query",url):
-                                print(colored("[-] Error Chack ","red"))
-                        else:
-                                print(colored(url.strip(),"green"))
-        def Dork_scan_sql(Target,cout):
-                for i in search(Target,stop=int(cout)):
-                        print(i) 
-                        pa = "'" 
-                        h = requests.get(i+pa) 
-                        soup = BeautifulSoup(h.content,'html.parser') 
-                        if len(soup.find_all(text=re.compile("SQL syntax"))) >0:
-                                
-                             print(colored("[SQL Found]=="+i,"green")) 
-                             open("SQL-injection","a").write("[SQL Found]=="+i+"\n")
-                        elif len(soup.find_all(text=re.compile("Warning"))) >0:
-                             print(colored("[SQL Found]=="+i,"green")) 
-                             open("SQL-injection.txt","a").write("[SQL Found]=="+i+"\n")
-                        else:
-                                print(colored("[No SQL Found ]","red"))                 
-                
-                
+https://github.com/Matrix07ksa/
+     Hejap_Zaeri 515
 
-        def domain_filter (domain,file):
-               write("[+] <-- Running Domain_filter_File ....-->")
-               write("[+] <-- Searching  [{}] Files [{}] ....-->".format(domain,file))
-               html = requests.get("https://www.google.com/search?num=500&q=site:"+domain+"+filetype:"+file)
-               if html.status_code == 200:
-                       data = re.sub('<b>', '', str(html.content))
-                       r = re.compile('[-_.a-zA-Z0-9.-_]*' + '\.' + file)  
-                       response = r.findall(data)
-                       for i in response :
-                               i.rstrip("\n")
-                               output = str(colored(i.replace("/url?q=",''),"green"))
-                               print(output) 
-                       print("#####################[Finshid]########################")
+""","green")+colored("-h, --help            show this help message and exit","red"))
 
-               elif html.status_code == 302:
-                       print("Your Returned "+html.status_code+"Reason"+html.reason)
-               else:
-                       print("Your Returned "+html.status_code+"Reason"+html.reason)
+use.add_option("--nmap",dest="nmap",help=colored("<Your Host> \t <Your Domain>","yellow"))
+use.add_option("--ping",dest="ping")
+use.add_option("--trcrouter",dest="trcrouter")
+use.add_option("--reversedns",dest="reversedns")
+use.add_option("--geoip",dest="geoip")
+use.add_option("--reverseiplookup",dest="reverseiplookup")
+use.add_option("--whois",dest="whois")
+use.add_option("--zonetransfer",dest="zonetransfer")
+use.add_option("--findshareddns",dest="findshareddns")
+use.add_option("--hostsearch",dest="hostsearch")
+use.add_option("--pagelinks",dest="pagelinks")
+use.add_option("--httpheaders",dest="httpheaders")
+use.add_option("--subnetcalc",dest="subnetcalc")
+use.add_option("--dnslookup",dest="dnslookup")
+advanced = OptionGroup(use,"Advanced Options")
+advanced.add_option("--dork_scan-sql",dest="sql_scan",help=colored("<Your Dork> Search Google","red"))
+advanced.add_option('-c',"--cout",dest="cout_scan",help=colored("<Your cout> Search Google","red"),default=99999)
+advanced.add_option('-d',"--domain",dest="domain",help=colored("<Your Doamin>","red"))
+advanced.add_option('-f',"--file",dest="file_filter",help=colored("<Your Filter File>","red"),default="None")
+advanced.add_option('-s',"--suid",dest="suid_exploit",help=colored("<Suid Command exploit Root>","red"))
+SCAN = OptionGroup(use,"Scan web ")
+SCAN.add_option('--sql',dest="scan_sql",help=colored("<Scan SQL injection var>","red"))
+SCAN.add_option('--xss',dest="scan_xss",help=colored("<Scan Xss  Var >","red"))
+SCAN.add_option('--rce',dest="scan_rce",help=colored("<Scan Rce  Var >","red"))
+SCAN.add_option('--scan',dest="scan_all",help=colored("<Scan all  >","red"))
 
+use.add_option_group(advanced)
+use.add_option_group(SCAN)
+(options,args) = use.parse_args()
+autocomplete(use,sys.argv[0])
 
+sql_scan = options.sql_scan
+nmap = options.nmap
+ping = options.ping
+trcrouter = options.trcrouter 
+reversedns = options.reversedns
+geoip = options.geoip
+reverseiplookup = options.reverseiplookup
+whois = options.whois
+zonetransfer = options.zonetransfer
+findshareddns = options.findshareddns
+hostsearch = options.hostsearch
+pagelinks = options.pagelinks
+httpheaders = options.httpheaders
+subnetcalc = options.subnetcalc
+dnslookup = options.dnslookup
+filter_file = options.file_filter
+Domain = options.domain
+suid_exploit = options.suid_exploit
+SQL_SCAN = options.scan_sql
+XSS_SCAN = options.scan_xss
+Rce_Scan = options.scan_rce
+all_scan = options.scan_all
+if nmap == None:
+     if ping == None:
+          if trcrouter == None:
+               if reversedns == None :
+                    if geoip == None :
+                         if reverseiplookup == None:
+                              if whois == None:
+                                   if zonetransfer == None:
+                                        if findshareddns == None :
+                                             if hostsearch == None :
+                                                  if pagelinks == None:
+                                                       if httpheaders == None:
+                                                            if subnetcalc == None :
+                                                                 if dnslookup == None :
+                                                                      if sql_scan == None:
+                                                                           if Domain == None:
+                                                                                if suid_exploit == None:
+                                                                                     if SQL_SCAN == None :
+                                                                                          if XSS_SCAN == None:
+                                                                                               if Rce_Scan == None :
+                                                                                                    if all_scan == None:
 
-	
+                                                                                                         print(use.usage)
+                                                                      
+if nmap != None:
+     hackinfo.nmap(str(nmap))
+     
+if ping != None:
+     hackinfo.ping(str(ping))
+     
+if trcrouter != None:
+     hackinfo.trcrouter(str(trcrouter))
+
+if reversedns != None:
+     hackinfo.reversedns(str(reversedns))
+     
+
+if geoip != None:
+     hackinfo.geoip(str(geoip))
+     
+
+if reverseiplookup != None:
+     hackinfo.reverseiplookup(str(reverseiplookup))
+     
+
+if whois != None:
+     hackinfo.whois(str(whois))
+     
+
+if zonetransfer != None:
+     hackinfo.zonetransfer(str(zonetransfer))
+     
+
+if findshareddns != None:
+     hackinfo.findshareddns(str(findshareddns))
+
+if hostsearch != None:
+     hackinfo.hostsearch(str(hostsearch))
+     
+
+if pagelinks != None:
+     hackinfo.pagelinks(str(pagelinks))
+
+if httpheaders != None:
+     hackinfo.httpheaders(str(httpheaders))
+
+if subnetcalc != None:
+     hackinfo.subnetcalc(str(subnetcalc))
+     
+
+if dnslookup != None:
+     hackinfo.dnslookup(str(dnslookup))
+     
+if sql_scan != None:
+     hackinfo.Dork_scan_sql(sql_scan,options.cout_scan)
+     
+if Domain != None:
+     hackinfo.domain_filter(str(Domain),str(filter_file))
+     
+if suid_exploit != None :
+     hackinfo.suid_exploit(suid_exploit)
+     
+if SQL_SCAN != None:
+     hackinfo.httpheaders(str(SQL_SCAN))
+     hackinfo.Sql_chack(SQL_SCAN)
+     
+if XSS_SCAN != None :
+     hackinfo.httpheaders(str(XSS_SCAN))
+     hackinfo.XSS_Chack(XSS_SCAN)
+if Rce_Scan != None :
+     hackinfo.httpheaders(str(Rce_Scan))
+     hackinfo.Rce_Chack(Rce_Scan)
+if all_scan != None :
+     hackinfo.httpheaders(str(all_scan))
+     hackinfo.Sql_chack(all_scan)
+     hackinfo.XSS_Chack(all_scan)
+     hackinfo.Rce_Chack(all_scan)
+else :
+     exit()
