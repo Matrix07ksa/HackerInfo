@@ -8,29 +8,32 @@ except:
      print("pip3 install optioncomplete")
 from optparse import *
 import sys
-use = OptionParser(colored("""
-88888888888888888888888888888888888888888888888888888888888888888888888
-88.._|      | `-.  | `.  -_-_ _-_  _-  _- -_ -  .'|   |.'|     |  _..88
-88   `-.._  |    |`!  |`.  -_ -__ -_ _- _-_-  .'  |.;'   |   _.!-'|  88
-88      | `-!._  |  `;!  ;. _______________ ,'| .-' |   _!.i'     |  88
-88..__  |     |`-!._ | `.| |_______________||."'|  _!.;'   |     _|..88
-88   |``"..__ |    |`";.| i|_|           |_|'| _!-|   |   _|..-|'    88
-88   |      |``--..|_ | `;!|l|           |1|.'j   |_..!-'|     |     88
-88   |      |    |   |`-,!_|_|           |_||.!-;'  |    |     |     88
-88___|______|____!.,.!,.!,!|d|           |p|,!,.!.,.!..__|_____|_____88
-88      |     |    |  |  | |_|           |_|| |   |   |    |      |  88
-88      |     |    |..!-;'i|r Hejab_Zaeri|r| |`-..|   |    |      |  88
-88      |    _!.-j'  | _!,"|_|           |_||!._|  `i-!.._ |      |  88
-88     _!.-'|    | _."|  !;|1|           |l|`.| `-._|    |``-.._  |  88
-88..-i'     |  _.''|  !-| !|_|           /|_|.|`-. | ``._ |     |``".88
-88   |      |.|    |.|  !| |u|           |n||`. |`!   | `".    |     88
-88   |  _.-'  |  .'  |.' |/|_|           |_|! |`!  `,.|    |-._|     88
-88  _!"'|     !.'|  .'| .'|[@]MMMMMMMMMMM[@] \|  `. | `._  |   `-._  88
-88-'    |   .'   |.|  |/| /                 \|`.  |`!    |.|      |`-88
-88      |_.'|   .' | .' |/https://github.com/Matrix07ksa/            88
-88     .'   | .'   |/|  /                     \ |`!   |`.|    `.  |  88
-88  _.'     !'|   .' | /                       \|  `  |  `.    |`.|  88
-88{Ksa}888888888888888888888888888888888888888888888888888888888(515)88
+
+use = OptionParser(colored("""             . . .                         
+              \|/                          
+            `--+--'                        
+              /|\                          
+             ' | '                         
+               |                           
+               |                           
+           ,--'#`--.                       
+           |#######|                       
+        _.-'#######`-._                    
+     ,-'###############`-.                 
+   ,'#####################`,               
+  /#########################\              
+ |###########################|             
+|#############################|            
+|#############################|            
+|#############################|            
+|#############################|            
+ |###########################|             
+  \#########################/              
+   `.#####################,'               
+     `._###############_,'                 
+        `--..#####..--'
+
+
 ""","green")+colored("-h, --help            show this help message and exit","red"))
 
 use.add_option("--nmap",dest="nmap",help=colored("<Your Host> \t <Your Domain>","yellow"))
@@ -52,9 +55,15 @@ advanced.add_option("--dork_scan-sql",dest="sql_scan",help=colored("<Your Dork> 
 advanced.add_option('-c',"--cout",dest="cout_scan",help=colored("<Your cout> Search Google","red"),default=99999)
 advanced.add_option('-d',"--domain",dest="domain",help=colored("<Your Doamin>","red"))
 advanced.add_option('-f',"--file",dest="file_filter",help=colored("<Your Filter File>","red"),default="None")
-
+advanced.add_option('-s',"--suid",dest="suid_exploit",help=colored("<Suid Command exploit Root>","red"))
+SCAN = OptionGroup(use,"Scan web ")
+SCAN.add_option('--sql',dest="scan_sql",help=colored("<Scan SQL injection var>","red"))
+SCAN.add_option('--xss',dest="scan_xss",help=colored("<Scan Xss  Var >","red"))
+SCAN.add_option('--rce',dest="scan_rce",help=colored("<Scan Rce  Var >","red"))
+SCAN.add_option('--scan',dest="scan_all",help=colored("<Scan all  >","red"))
 
 use.add_option_group(advanced)
+use.add_option_group(SCAN)
 (options,args) = use.parse_args()
 autocomplete(use,sys.argv[0])
 
@@ -75,6 +84,11 @@ subnetcalc = options.subnetcalc
 dnslookup = options.dnslookup
 filter_file = options.file_filter
 Domain = options.domain
+suid_exploit = options.suid_exploit
+SQL_SCAN = options.scan_sql
+XSS_SCAN = options.scan_xss
+Rce_Scan = options.scan_rce
+all_scan = options.scan_all
 if nmap == None:
      if ping == None:
           if trcrouter == None:
@@ -91,8 +105,13 @@ if nmap == None:
                                                                  if dnslookup == None :
                                                                       if sql_scan == None:
                                                                            if Domain == None:
-                                                                                
-                                                                                print(use.usage)
+                                                                                if suid_exploit == None:
+                                                                                     if SQL_SCAN == None :
+                                                                                          if XSS_SCAN == None:
+                                                                                               if Rce_Scan == None :
+                                                                                                    if all_scan == None:
+
+                                                                                                         print(use.usage)
                                                                       
 if nmap != None:
      hackinfo.nmap(str(nmap))
@@ -145,8 +164,27 @@ if dnslookup != None:
      
 if sql_scan != None:
      hackinfo.Dork_scan_sql(sql_scan,options.cout_scan)
+     
 if Domain != None:
      hackinfo.domain_filter(str(Domain),str(filter_file))
      
+if suid_exploit != None :
+     hackinfo.suid_exploit(suid_exploit)
+     
+if SQL_SCAN != None:
+     hackinfo.httpheaders(str(SQL_SCAN))
+     hackinfo.Sql_chack(SQL_SCAN)
+     
+if XSS_SCAN != None :
+     hackinfo.httpheaders(str(XSS_SCAN))
+     hackinfo.XSS_Chack(XSS_SCAN)
+if Rce_Scan != None :
+     hackinfo.httpheaders(str(Rce_Scan))
+     hackinfo.Rce_Chack(Rce_Scan)
+if all_scan != None :
+     hackinfo.httpheaders(str(all_scan))
+     hackinfo.Sql_chack(all_scan)
+     hackinfo.XSS_Chack(all_scan)
+     hackinfo.Rce_Chack(all_scan)
 else :
      exit()
